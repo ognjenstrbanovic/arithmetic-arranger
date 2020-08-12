@@ -6,8 +6,12 @@ def arithmetic_arranger(problems):
     elif "." in problems:
         return "Error: Numbers must only contain digits."
     elif for problem in problems:
-        if len(problem.replace(" ", "").split("+")[0]) > 4 or len(problem.replace(" ", "").split("-")[0]) > 4 or 
-        len(problem.replace(" ", "").split("+")[1]) > 4 or len(problem.replace(" ", "").split("-")[1]) > 4:
+        if len(problem.replace(" ", "").split("+")[0]) > 4 or len(problem.replace(" ", "").split("-")[0]) > 4 or len(problem.replace(" ", "").split("+")[1]) > 4 or len(problem.replace(" ", "").split("-")[1]) > 4:
             return "Error: Numbers cannot be more than four digits."
     else:
-        return arranged_problems
+        
+        if len(problem.replace(" ", "").split("+")[0]) > 2 or len(problem.replace(" ", "").split("-")[0]) > 2 or len(problem.replace(" ", "").split("+")[1]) > 2 or len(problem.replace(" ", "").split("-")[1]) > 2:
+            print("-----")
+        else:
+            print("----")
+            return arranged_problems
