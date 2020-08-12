@@ -3,6 +3,7 @@ def arithmetic_arranger(problems):
     number_1_subtract = problem.replace(" ", "").split("-")[0]
     number_2_add = problem.replace(" ", "").split("+")[1]
     number_2_subtract = problem.replace(" ", "").split("-")[1]
+    # if error...
     if len(problems) > 5:
         return "Error: Too many problems."
     elif "*" in problems or "/" in problems:
@@ -12,6 +13,7 @@ def arithmetic_arranger(problems):
     elif len(number_1_add) > 4 or len(number_1_subtract) > 4 or len(number_2_add) > 4 or len(number_2_subtract) > 4:
         return "Error: Numbers cannot be more than four digits."
     else:
+        # if no error...
         def arranged_problems():
             for problem in problems:
                 if len(number_1_add) == 1 or len(number_1_subtract) == 1:
