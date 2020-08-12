@@ -16,8 +16,16 @@ def arithmetic_arranger(problems):
         # if no error...
         def arranged_problems():
             for problem in problems:
-                if len(number_1_add) == 1 or len(number_1_subtract) == 1:
+                # number of length one...
+                if "+" in problem and len(number_1_add) == 1:
                     print(" " + " " + " " + number_1_add)
+                elif "-" in problem and len(number_1_subtract) == 1:
+                    print(" " + " " + " " + number_1_subtract)
+                # number of length two...
+                elif "+" in problem and len(number_1_add) == 2:
+                    print(" " + " " + number_1_add)
+                elif "-" in problem and len(number_1_subtract) == 2:
+                    print(" " + " " + number_1_subtract)
                 if len(number_1_add) > 2 or len(number_1_subtract) > 2 or len(number_2_add) > 2 or len(number_2_subtract) > 2:
                     print("-----")
                 else:
