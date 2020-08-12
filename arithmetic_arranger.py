@@ -1,4 +1,12 @@
 def arithmetic_arranger(problems):
-
-
-    return arranged_problems
+    if len(problems) > 5:
+        return "Error: Too many problems."
+    elif "*" in problems or "/" in problems:
+        return "Error: Operator must be '+' or '-'."
+    elif "." in problems:
+        return "Error: Numbers must only contain digits."
+    elif for problem in problems:
+        if len(problem.replace(" ", "").split("+")[0]) > 4 or len(problem.replace(" ", "").split("-")[0]) > 4 or len(problem.replace(" ", "").split("+")[1]) > 4 or len(problem.replace(" ", "").split("+")[1]) > 4:
+            return "Error: Numbers cannot be more than four digits."
+    else:
+        return arranged_problems
