@@ -1,36 +1,55 @@
+import re
 def arithmetic_arranger(problems):
-    number_1_add = problem.replace(" ", "").split("+")[0]
-    number_1_subtract = problem.replace(" ", "").split("-")[0]
-    number_2_add = problem.replace(" ", "").split("+")[1]
-    number_2_subtract = problem.replace(" ", "").split("-")[1]
-    # user error...
-    if len(problems) > 5:
-        return "Error: Too many problems."
-    elif "*" in problems or "/" in problems:
-        return "Error: Operator must be '+' or '-'."
-    elif "." in problems:
-        return "Error: Numbers must only contain digits."
-    elif len(number_1_add) > 4 or len(number_1_subtract) > 4 or len(number_2_add) > 4 or len(number_2_subtract) > 4:
-        return "Error: Numbers cannot be more than four digits."
-    else:
-        # no user error...
-        def arranged_problems():
-            for problem in problems:
-                # number of length one, print number...
+    for problem in problems:
+        number_1_add = re.split("[ + ]|\s|[ - ]", problem)
+        print(number_1_add)
+        number_1_subtract = problem.replace(" ", "").split("-")[0]
+        number_2_add = problem.replace(" ", "").split("+")[1]
+        number_2_subtract = problem.replace(" ", "").split("-")[1]
+        # user error...
+        if len(problems) > 5:
+            return "Error: Too many problems."
+        elif "*" in problems or "/" in problems:
+            return "Error: Operator must be '+' or '-'."
+        elif "." in problems:
+            return "Error: Numbers must only contain digits."
+        elif len(number_1_add) > 4 or len(number_1_subtract) > 4 or len(number_2_add) > 4 or len(number_2_subtract) > 4:
+            return "Error: Numbers cannot be more than four digits."
+        else:
+            # no user error...
+            def arranged_problems():
+                # first number of length one, print number...
                 if "+" in problem and len(number_1_add) == 1:
                     print(" " + " " + " " + number_1_add + "\n")
                 elif "-" in problem and len(number_1_subtract) == 1:
                     print(" " + " " + " " + number_1_subtract + "\n")
-                # number of length two, print number...
+                # first number of length two, print number...
                 elif "+" in problem and len(number_1_add) == 2:
                     print(" " + " " + number_1_add + "\n")
-                elif "-" in problem and len(number_1_add) == 2:
+                elif "-" in problem and len(number_1_subtract) == 2:
                     print(" " + " " + number_1_subtract + "\n")
-                # number of length three, print number...
+                # first number of length three, print number...
                 elif "+" in problem and len(number_1_add) == 3:
                     print(" " + number_1_add + "\n")
-                elif "-" in problem and len(number_1_add) == 3:
+                elif "-" in problem and len(number_1_subtract) == 3:
                     print(" " + number_1_subtract + "\n")
+
+                # second number of length one, print number...
+                if "+" in problem and len(number_2_add) == 1:
+                    print(" " + " " + " " + number_2_add + "\n")
+                elif "-" in problem and len(number_2_subtract) == 1:
+                    print(" " + " " + " " + number_2_subtract + "\n")
+                # second number of length two, print number...
+                elif "+" in problem and len(number_2_add) == 2:
+                    print(" " + " " + number_2_add + "\n")
+                elif "-" in problem and len(number_2_subtract) == 2:
+                    print(" " + " " + number_2_subtract + "\n")
+                # second number of length three, print number...
+                elif "+" in problem and len(number_2_add) == 3:
+                    print(" " + number_2_add + "\n")
+                elif "-" in problem and len(number_2_subtract) == 3:
+                    print(" " + number_2_subtract + "\n")
+
 
                 # printing the line...
                 if ("+" in problem and len(number_1_add) > 3) or ("-" in problem and len(number_1_subtract)) > 3 or ("+" in problem and len(number_2_add) > 3) or ("-" in problem and len(number_2_subtract) > 3):
@@ -49,3 +68,5 @@ def arithmetic_arranger(problems):
 
                 if problem != problems[-1]:
                     print(" " + " " + " " + " ")
+
+arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
