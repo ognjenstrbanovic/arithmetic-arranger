@@ -17,29 +17,29 @@ def arithmetic_arranger(problems):
             # no user error...
             # FIRST number of length ONE, printing number...
             if len(number_1) == 1:
-                print(" " + " " + " " + number_1 + "\n")
+                print(" " + " " + " " + number_1)
             # FIRST number of length TWO, printing number...
             elif len(number_1) == 2:
-                print(" " + " " + number_1 + "\n")
+                print(" " + " " + number_1)
             # FIRST number of length THREE or FOUR, printing number...
             else:
-                print(" " + number_1 + "\n")
+                print(" " + number_1)
 
             # SECOND number of length ONE, printing number...
             if "+" in problem and len(number_2) == 1:
-                print("+" + " " + " " + " " + number_2 + "\n")
+                print("+" + " " + " " + " " + number_2)
             elif "-" in problem and len(number_2) == 1:
-                print("-" + " " + " " + " " + number_2 + "\n")
+                print("-" + " " + " " + " " + number_2)
             # SECOND number of length TWO, printing number...
             elif "+" in problem and len(number_2) == 2:
-                print("+" + " " + " " + number_2 + "\n")
+                print("+" + " " + " " + number_2)
             elif "-" in problem and len(number_2) == 2:
-                print("-" + " " + " " + number_2 + "\n")
+                print("-" + " " + " " + number_2)
             # SECOND number of length THREE or FOUR, printing number...
             elif "+" in problem and len(number_2) > 2:
-                print("+" + " " + number_2 + "\n")
+                print("+" + " " + number_2)
             else:
-                print("-" + " " + number_2 + "\n")
+                print("-" + " " + number_2)
 
             # printing the LINE...
             if len(number_1) > 3 or len(number_2) > 3:
