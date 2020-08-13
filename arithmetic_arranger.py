@@ -1,5 +1,5 @@
 import re # regular expressions
-def arithmetic_arranger(problems, true_or_false):
+def arithmetic_arranger(problems, true_or_false = False):
     for problem in problems:
         number_1 = re.split("\+|\-", problem)[0].strip()
         number_2 = re.split("\+|\-", problem)[1].strip()
@@ -287,4 +287,4 @@ def arithmetic_arranger(problems, true_or_false):
                     else:
                         print(" " + str(int(number_1) - int(number_2)) + "    ")
 
-arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
+arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True)
