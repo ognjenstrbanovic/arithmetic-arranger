@@ -3,7 +3,7 @@ def arithmetic_arranger(problems):
     number_1_subtract = problem.replace(" ", "").split("-")[0]
     number_2_add = problem.replace(" ", "").split("+")[1]
     number_2_subtract = problem.replace(" ", "").split("-")[1]
-    # if error...
+    # user error...
     if len(problems) > 5:
         return "Error: Too many problems."
     elif "*" in problems or "/" in problems:
@@ -13,27 +13,39 @@ def arithmetic_arranger(problems):
     elif len(number_1_add) > 4 or len(number_1_subtract) > 4 or len(number_2_add) > 4 or len(number_2_subtract) > 4:
         return "Error: Numbers cannot be more than four digits."
     else:
-        # if no error...
+        # no user error...
         def arranged_problems():
             for problem in problems:
-                # number of length one...
+                # number of length one, print number...
                 if "+" in problem and len(number_1_add) == 1:
-                    print(" " + " " + " " + number_1_add)
+                    print(" " + " " + " " + number_1_add + "\n")
                 elif "-" in problem and len(number_1_subtract) == 1:
-                    print(" " + " " + " " + number_1_subtract)
-                # number of length two...
+                    print(" " + " " + " " + number_1_subtract + "\n")
+                # number of length two, print number...
                 elif "+" in problem and len(number_1_add) == 2:
-                    print(" " + " " + number_1_add)
-                elif "-" in problem and len(number_1_subtract) == 2:
-                    print(" " + " " + number_1_subtract)
-                if len(number_1_add) > 2 or len(number_1_subtract) > 2 or len(number_2_add) > 2 or len(number_2_subtract) > 2:
-                    print("-----")
+                    print(" " + " " + number_1_add + "\n")
+                elif "-" in problem and len(number_1_add) == 2:
+                    print(" " + " " + number_1_subtract + "\n")
+                # number of length three, print number...
+                elif "+" in problem and len(number_1_add) == 3:
+                    print(" " + number_1_add + "\n")
+                elif "-" in problem and len(number_1_add) == 3:
+                    print(" " + number_1_subtract + "\n")
+
+                # printing the line...
+                if ("+" in problem and len(number_1_add) > 3) or ("-" in problem and len(number_1_subtract)) > 3 or ("+" in problem and len(number_2_add) > 3) or ("-" in problem and len(number_2_subtract) > 3):
+                    print("\n------\n")
+                elif len(number_1_add) > 2 or len(number_1_subtract) > 2 or len(number_2_add) > 2 or len(number_2_subtract) > 2:
+                    print("\n-----\n")
                 else:
-                    print("----")
+                    print("\n----\n")
 
                 if "+" in problem:
-                    print(" " + " " + str(int(number_1_add + int(number_2_add)))
+                    print(" " + " " + str(int(number_1_add) + int(number_2_add)))
+                elif ("-" in problem) and (int(number_1_subtract) - int(number_2_subtract) > 0):
+                    print(" " + " " + str(int(number_1_subtract) - int(number_2_subtract)))
                 else:
-                    print(" " + " " + str(int(number_1_subtract - int(number_2_subtract)))
+                    print(" " + str(int(number_1_subtract) - int(number_2_subtract)))
 
-            return arranged_problems()
+                if problem != problems[-1]:
+                    print(" " + " " + " " + " ")
