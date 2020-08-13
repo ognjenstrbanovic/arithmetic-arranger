@@ -14,166 +14,243 @@ def arithmetic_arranger(problems):
             return "Error: Numbers cannot be more than four digits."
         else:
             # no user error...
-            # printing the first two numbers...
+            # printing the first two numbers and the sum...
             if len(number_1) == 4 and "+" in problem and len(number_2) == 4:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + number_2 + "    ")
                 print("------" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 4 and "-" in problem and len(number_2) == 4:
                 print(" " + " " + number_1 + "    ")
                 print("-" + " " + number_2 + "    ")
                 print("------" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 4 and "+" in problem and len(number_2) == 3:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + " " + number_2 + "    ")
                 print("------" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 4 and "-" in problem and len(number_2) == 3:
                 print(" " + " " + number_1 + "    ")
                 print("-" + " " + " " + number_2 + "    ")
                 print("------" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 4 and "+" in problem and len(number_2) == 2:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + " " + " " + number_2 + "    ")
                 print("------" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 4 and "-" in problem and len(number_2) == 2:
                 print(" " + " " + number_1 + "    ")
                 print("-" + " " + " " + " " + number_2 + "    ")
                 print("------" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 4 and "+" in problem and len(number_2) == 1:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + " " + " " + " " + number_2 + "    ")
                 print("------" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 4 and "-" in problem and len(number_2) == 1:
                 print(" " + " " + number_1 + "    ")
                 print("-" + " " + " " + " " + " " + number_2 + "    ")
                 print("------" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 3 and "+" in problem and len(number_2) == 4:
                 print(" " + " " + " " + number_1 + "    ")
                 print("+" + " " + number_2 + "    ")
                 print("------" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 3 and "-" in problem and len(number_2) == 4:
                 print(" " + " " + " " + number_1 + "    ")
                 print("-" + " " + number_2 + "    ")
                 print("------" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 3 and "+" in problem and len(number_2) == 3:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + " " + number_2 + "    ")
                 print("------" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 3 and "-" in problem and len(number_2) == 3:
                 print(" " + " " + " " + number_1 + "    ")
                 print("-" + " " + " " + number_2 + "    ")
                 print("------" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 2 and "+" in problem and len(number_2) == 4:
                 print(" " + " " + " " + " " + number_1 + "    ")
                 print("+" + " " + number_2 + "    ")
                 print("------" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 2 and "-" in problem and len(number_2) == 4:
                 print(" " + " " + " " + " " + number_1 + "    ")
                 print("-" + " " + number_2 + "    ")
                 print("------" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 1 and "+" in problem and len(number_2) == 4:
                 print(" " + " " + " " + " " + " " + number_1 + "    ")
                 print("+" + " " + number_2 + "    ")
                 print("------" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 1 and "-" in problem and len(number_2) == 4:
                 print(" " + " " + " " + " " + " " + number_1 + "    ")
                 print("-" + " " + number_2 + "    ")
                 print("------" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 3 and "+" in problem and len(number_2) == 3:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + " " + number_2 + "    ")
                 print("-----" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 3 and "+" in problem and len(number_2) == 3:
                 print(" " + " " + number_1 + "    ")
                 print("-" + " " + " " + number_2 + "    ")
                 print("-----" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 3 and "+" in problem and len(number_2) == 2:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + " " + number_2 + "    ")
                 print("-----" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 3 and "-" in problem and len(number_2) == 2:
                 print(" " + " " + number_1 + "    ")
                 print("-" + " " + " " + number_2 + "    ")
                 print("-----" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 3 and "+" in problem and len(number_2) == 1:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + " " + " " + number_2 + "    ")
                 print("-----" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 3 and "-" in problem and len(number_2) == 1:
                 print(" " + " " + number_1 + "    ")
                 print("-" + " " + " " + " " + number_2 + "    ")
                 print("-----" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 2 and "+" in problem and len(number_2) == 3:
                 print(" " + " " + " " + number_1 + "    ")
                 print("+" + " " + number_2 + "    ")
                 print("-----" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 2 and "-" in problem and len(number_2) == 3:
                 print(" " + " " + " " + number_1 + "    ")
                 print("-" + " " + number_2 + "    ")
                 print("-----" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 1 and "+" in problem and len(number_2) == 3:
                 print(" " + " " + " " + " " + number_1 + "    ")
                 print("+" + " " + number_2 + "    ")
                 print("-----" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 1 and "-" in problem and len(number_2) == 3:
                 print(" " + " " + " " + " " + number_1 + "    ")
                 print("-" + " " + number_2 + "    ")
                 print("-----" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 2 and "+" in problem and len(number_2) == 2:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + number_2 + "    ")
                 print("----" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 2 and "-" in problem and len(number_2) == 2:
                 print(" " + " " + number_1 + "    ")
                 print("-" + " " + number_2 + "    ")
                 print("----" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 2 and "+" in problem and len(number_2) == 1:
                 print(" " + " " + number_1 + "    ")
                 print("+" + " " + " " + number_2 + "    ")
                 print("----" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 2 and "-" in problem and len(number_2) == 1:
                 print(" " + " " + number_1 + "    ")
                 print("-" + " " + " " + number_2 + "    ")
                 print("----" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 1 and "+" in problem and len(number_2) == 2:
                 print(" " + " " + " " + number_1 + "    ")
                 print("+" + " " + number_2 + "    ")
                 print("----" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             elif len(number_1) == 1 and "-" in problem and len(number_2) == 2:
                 print(" " + " " + " " + number_1 + "    ")
                 print("-" + " " + number_2 + "    ")
                 print("----" + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
             elif len(number_1) == 1 and "+" in problem and len(number_2) == 1:
                 print(" " + " " + " " + number_1 + "    ")
                 print("+" + " " + " " + number_2 + "    ")
                 print("----" + "    ")
+                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
             else:
                 print(" " + " " + " " + number_1 + "    ")
                 print("-" + " " + " " + number_2 + "    ")
                 print("----" + "    ")
-
-            # printing the SUM...
-            if "+" in problem:
-                print(" " + " " + str(int(number_1) + int(number_2)) + "    ")
-            elif ("-" in problem) and (int(number_1) - int(number_2) > 0):
-                print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
-            else:
-                print(" " + str(int(number_1) - int(number_2)) + "    ")
+                if int(number_1) - int(number_2) > 0:
+                    print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
+                else:
+                    print(" " + str(int(number_1) - int(number_2)) + "    ")
 
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
