@@ -47,7 +47,7 @@ def arithmetic_arranger(problems):
                 print("+" + " " + " " + " " + " " + number_2 + "    ")
                 print("------" + "    ")
             elif len(number_1) == 4 and "-" in problem and len(number_2) == 1:
-                print(" " + " " + " " + " " + number_1 + "    ")
+                print(" " + " " + number_1 + "    ")
                 print("-" + " " + " " + " " + " " + number_2 + "    ")
                 print("------" + "    ")
 
