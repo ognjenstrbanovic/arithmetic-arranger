@@ -252,7 +252,8 @@ def arithmetic_arranger(problems, true_or_false = False):
                                 print(" " + " " + str(int(number_1) - int(number_2)))
                             else:
                                 print(" " + str(int(number_1) - int(number_2)))
-
+                                
+                i += 1
 
 
 
@@ -448,6 +449,5 @@ def arithmetic_arranger(problems, true_or_false = False):
                     #             print(" " + " " + str(int(number_1) - int(number_2)) + "    ")
                     #         else:
                     #             print(" " + str(int(number_1) - int(number_2)) + "    ")
-            i += 1
 
-print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True))
+print(arithmetic_arranger(["3200 + 6980", "3801 - 2", "45 + 43", "123 + 49"], True))
