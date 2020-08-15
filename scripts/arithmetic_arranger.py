@@ -14,8 +14,7 @@ def arithmetic_arranger(problems, true_or_false = False):
             return "Error: Numbers cannot be more than four digits."
         else:
             # no user error...
-            i = 0
-            while i < 4:
+            for x in range(3):
 
                 if problem != problems[-1]:
 
@@ -252,9 +251,6 @@ def arithmetic_arranger(problems, true_or_false = False):
                                 print(" " + " " + str(int(number_1) - int(number_2)))
                             else:
                                 print(" " + str(int(number_1) - int(number_2)))
-                                
-                i += 1
-
 
 
 
