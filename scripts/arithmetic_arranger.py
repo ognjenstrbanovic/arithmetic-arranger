@@ -1,5 +1,10 @@
 import re # regular expressions
 def arithmetic_arranger(problems, true_or_false = False):
+    line_one = []
+    line_two = []
+    line_three = []
+    line_four = []
+    my_separator = "    "
     for problem in problems:
         number_1 = re.split("\+|\-", problem)[0].strip()
         number_2 = re.split("\+|\-", problem)[1].strip()
@@ -14,22 +19,41 @@ def arithmetic_arranger(problems, true_or_false = False):
             return "Error: Numbers cannot be more than four digits."
         # no user error...
         else:
-            line_one = []
-            line_two = []
-            line_three = []
-            line_four = []
-            my_separator = "    "
-            if len(number_1) == 4 and len(number_2) == 4:
+            if len(number_1) < 2 and len(number_2) < 2:
                 line_one.append("  " + number_1)
-                line_two.append("+" + " " + number_2)
-                line_three.append("------")
+                if "+" in problem:
+                    line_two.append("+ " + number_2)
+                elif "-" in problem:
+                    line_two.append("- " + number_2)
+                line_three.append("---")
                 if true_or_false == True:
-                    line_four.append(" " + " " + str(int(number_1) + int(number_2)))
-            print(my_separator.join(line_one))
-            print(my_separator.join(line_two))
-            print(my_separator.join(line_three))
-            print(my_separator.join(line_four))
-arithmetic_arranger(["4444 + 1111", "5555 + 2222"], True)
+                    if "+" in problem:
+                        line_four.append("  " + str(int(number_1) + int(number_2)))
+                    if "-" in problem:
+                        if int(number_1) - int(number_2) > 0:
+                            line_four.append("  " + str(int(number_1) - int(number_2)))
+                        elif int(number_1) - int(number_2) < 0:
+                            line_four.append(" " + str(int(number_1) - int(number_2)))
+            elif len(number_1) < 3 and len(number_2) < 3:
+                line_one.append("  " + number_1)
+                if "+" in problem:
+                    line_two.append("+  " + number_2)
+                elif "-" in problem:
+                    line_two.append("-  " + number_2)
+                line_three.append("-----")
+                if true_or_false == True:
+                    if "+" in problem:
+                        line_four.append("  " + str(int(number_1) + int(number_2)))
+                    if "-" in problem:
+                        if int(number_1) - int(number_2) > 0:
+                            line_four.append("  " + str(int(number_1) - int(number_2)))
+                        elif int(number_1) - int(number_2) < 0:
+                            line_four.append(" " + str(int(number_1) - int(number_2)))
+    print(my_separator.join(line_one))
+    print(my_separator.join(line_two))
+    print(my_separator.join(line_three))
+    print(my_separator.join(line_four))
+arithmetic_arranger(["1 + 1", "22 - 88"], True)
 
 
 
