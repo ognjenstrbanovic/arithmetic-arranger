@@ -23,19 +23,19 @@ def arithmetic_arranger(problems, true_or_false = False):
             line_one.append(number_1)
             # Line 2...
             if "+" in problem:
-                line_two.append("+ " + number_2)
+                line_two.append("{:=+5d}".format(int(number_2)))
             else:
-                line_two.append("- " + number_2)
+                line_two.append("{:=-5d}".format(int(number_2)))
             # Line 3...
-            if len(number_1) < 2 and len(number_2) < 2:
+            if len(problem) < 7:
                 line_three.append("---")
-            elif len(number_1) < 3 and len(number_2) < 3:
+            elif len(problem) < 8:
                 line_three.append("----")
-            elif len(number_1) < 4 and len(number_2) < 4:
+            elif len(problem) < 9:
                 line_three.append("-----")
-            elif len(number_1) < 5 and len(number_2) < 5:
+            elif len(problem) < 11:
                 line_three.append("------")
-            elif len(str(int(number_1) + int(number_2))) > 4:
+            else:
                 line_three.append("-------")
             # Line 4...
             if true_or_false == True:
@@ -46,26 +46,26 @@ def arithmetic_arranger(problems, true_or_false = False):
                         line_four.append(str(int(number_1) - int(number_2)))
                     elif int(number_1) - int(number_2) < 0:
                         line_four.append(str(int(number_1) - int(number_2)))
-    for e in line_one:
-        if e != line_one[-1]:
-            print(f"{e:>5}", end = "    ")
+    for element in line_one:
+        if element != line_one[-1]:
+            print(f"{element:>5}", end = "    ")
         else:
-            print(f"{e:>5}")
-    for e in line_two:
-        if e != line_two[-1]:
-            print(f"{e:>5}", end = "    ")
+            print(f"{element:>5}")
+    for element in line_two:
+        if element != line_two[-1]:
+            print(f"{element:>5}", end = "    ")
         else:
-            print(f"{e:>5}")
-    for e in line_three:
-        if e != line_three[-1]:
-            print(f"{e:>5}", end = "    ")
+            print(f"{element:>5}")
+    for element in line_three:
+        if element != line_three[-1]:
+            print(f"{element:>5}", end = "    ")
         else:
-            print(f"{e:>5}")
-    for e in line_four:
-        if e != line_four[-1]:
-            print(f"{e:>5}", end = "    ")
+            print(f"{element:>5}")
+    for element in line_four:
+        if element != line_four[-1]:
+            print(f"{element:>5}", end = "    ")
         else:
-            print(f"{e:>5}")
+            print(f"{element:>5}")
 arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True)
 
 
