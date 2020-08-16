@@ -25,7 +25,10 @@ def arithmetic_arranger(problems, true_or_false = False):
                 line_three.append("------")
                 if true_or_false == True:
                     line_four.append(" " + " " + str(int(number_1) + int(number_2)))
-            print(my_separator.join(line_one), end = "    ")
+            print(my_separator.join(line_one))
+            print(my_separator.join(line_two))
+            print(my_separator.join(line_three))
+            print(my_separator.join(line_four))
 arithmetic_arranger(["4444 + 1111", "5555 + 2222"], True)
 
 
