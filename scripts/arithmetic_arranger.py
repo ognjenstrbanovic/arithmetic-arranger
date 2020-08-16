@@ -4,11 +4,11 @@ def arithmetic_arranger(problems, true_or_false = False):
     line_two = []
     line_three = []
     line_four = []
-    my_separator = "    "
+    # my_separator = "    "
     for problem in problems:
         number_1 = re.split("\+|\-", problem)[0].strip()
         number_2 = re.split("\+|\-", problem)[1].strip()
-        # user error...
+        # User error...
         if len(problems) > 5:
             return "Error: Too many problems."
         elif "*" in problems or "/" in problems:
@@ -17,7 +17,7 @@ def arithmetic_arranger(problems, true_or_false = False):
             return "Error: Numbers must only contain digits."
         elif len(number_1) > 4 or len(number_2) > 4:
             return "Error: Numbers cannot be more than four digits."
-        # no user error...
+        # No user error...
         else:
             # Line 1...
             line_one.append(number_1)
@@ -35,6 +35,8 @@ def arithmetic_arranger(problems, true_or_false = False):
                 line_three.append("-----")
             elif len(number_1) < 5 and len(number_2) < 5:
                 line_three.append("------")
+            elif len(str(int(number_1) + int(number_2))) > 4:
+                line_three.append("-------")
             # Line 4...
             if true_or_false == True:
                 if "+" in problem:
@@ -46,28 +48,25 @@ def arithmetic_arranger(problems, true_or_false = False):
                         line_four.append(str(int(number_1) - int(number_2)))
     for e in line_one:
         if e != line_one[-1]:
-            print(f"{e:>4}", end = "    ")
+            print(f"{e:>5}", end = "    ")
         else:
-            print(f"{e:>4}")
+            print(f"{e:>5}")
     for e in line_two:
         if e != line_two[-1]:
-            print(f"{e:>4}", end = "    ")
+            print(f"{e:>5}", end = "    ")
         else:
-            print(f"{e:>4}")
+            print(f"{e:>5}")
     for e in line_three:
         if e != line_three[-1]:
-            print(f"{e:>4}", end = "    ")
+            print(f"{e:>5}", end = "    ")
         else:
-            print(f"{e:>4}")
+            print(f"{e:>5}")
     for e in line_four:
         if e != line_four[-1]:
-            print(f"{e:>4}", end = "    ")
+            print(f"{e:>5}", end = "    ")
         else:
-            print(f"{e:>4}")
-    print(line_two)
-    print(line_three)
-arithmetic_arranger(["1 + 1", "22 - 88"], True)
-
+            print(f"{e:>5}")
+arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True)
 
 
 
