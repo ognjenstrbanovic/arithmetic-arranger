@@ -19,36 +19,55 @@ def arithmetic_arranger(problems, true_or_false = False):
             return "Error: Numbers cannot be more than four digits."
         # no user error...
         else:
-            if len(number_1) < 2 and len(number_2) < 2:
-                line_one.append("  " + number_1)
+            line_one.append(number_1)
+            if "+" in problem:
+                line_two.append("+ " + number_2)
+            elif "-" in problem:
+                line_two.append("- " + number_2)
+            line_three.append("---")
+            if true_or_false == True:
                 if "+" in problem:
-                    line_two.append("+ " + number_2)
+                    line_four.append(str(int(number_1) + int(number_2)))
                 elif "-" in problem:
-                    line_two.append("- " + number_2)
-                line_three.append("---")
-                if true_or_false == True:
-                    if "+" in problem:
-                        line_four.append("  " + str(int(number_1) + int(number_2)))
-                    if "-" in problem:
-                        if int(number_1) - int(number_2) > 0:
-                            line_four.append("  " + str(int(number_1) - int(number_2)))
-                        elif int(number_1) - int(number_2) < 0:
-                            line_four.append(" " + str(int(number_1) - int(number_2)))
-            elif len(number_1) < 3 and len(number_2) < 3:
-                line_one.append("  " + number_1)
-                if "+" in problem:
-                    line_two.append("+  " + number_2)
-                elif "-" in problem:
-                    line_two.append("-  " + number_2)
-                line_three.append("-----")
-                if true_or_false == True:
-                    if "+" in problem:
-                        line_four.append("  " + str(int(number_1) + int(number_2)))
-                    if "-" in problem:
-                        if int(number_1) - int(number_2) > 0:
-                            line_four.append("  " + str(int(number_1) - int(number_2)))
-                        elif int(number_1) - int(number_2) < 0:
-                            line_four.append(" " + str(int(number_1) - int(number_2)))
+                    if int(number_1) - int(number_2) > 0:
+                        line_four.append(str(int(number_1) - int(number_2)))
+                    elif int(number_1) - int(number_2) < 0:
+                        line_four.append(str(int(number_1) - int(number_2)))
+
+
+
+
+
+            # if len(number_1) < 2 and len(number_2) < 2:
+            #     line_one.append("  " + number_1)
+            #     if "+" in problem:
+            #         line_two.append("+ " + number_2)
+            #     elif "-" in problem:
+            #         line_two.append("- " + number_2)
+            #     line_three.append("---")
+            #     if true_or_false == True:
+            #         if "+" in problem:
+            #             line_four.append("  " + str(int(number_1) + int(number_2)))
+            #         if "-" in problem:
+            #             if int(number_1) - int(number_2) > 0:
+            #                 line_four.append("  " + str(int(number_1) - int(number_2)))
+            #             elif int(number_1) - int(number_2) < 0:
+            #                 line_four.append(" " + str(int(number_1) - int(number_2)))
+            # elif len(number_1) < 3 and len(number_2) < 3:
+            #     line_one.append("  " + number_1)
+            #     if "+" in problem:
+            #         line_two.append("+  " + number_2)
+            #     elif "-" in problem:
+            #         line_two.append("-  " + number_2)
+            #     line_three.append("-----")
+            #     if true_or_false == True:
+            #         if "+" in problem:
+            #             line_four.append("  " + str(int(number_1) + int(number_2)))
+            #         if "-" in problem:
+            #             if int(number_1) - int(number_2) > 0:
+            #                 line_four.append("  " + str(int(number_1) - int(number_2)))
+            #             elif int(number_1) - int(number_2) < 0:
+            #                 line_four.append(" " + str(int(number_1) - int(number_2)))
     print(my_separator.join(line_one))
     print(my_separator.join(line_two))
     print(my_separator.join(line_three))
