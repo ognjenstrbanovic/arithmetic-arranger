@@ -1,9 +1,11 @@
 import re # regular expressions
 def arithmetic_arranger(problems, with_results = False):
+    
     if len(problems) > 5:
         return "Error: Too many problems."
 
     arranged_problems = [[], [], [], []]
+
     for problem in problems:
         if "*" in problem or "/" in problem:
             return "Error: Operator must be '+' or '-'."
@@ -42,12 +44,14 @@ def arithmetic_arranger(problems, with_results = False):
     line_two = arranged_problems[1]
     line_three = arranged_problems[2]
     line_four = arranged_problems[3]
+
     problem_width = []
     for element in line_three:
         problem_width.append(len(element))
 
     # Output formatting with \n character...
     separator = "    "
+
     for i in range(len(problems)):
         if line_one[i] != line_one[-1]:
             print(line_one[i].rjust(problem_width[i]), end = separator)
