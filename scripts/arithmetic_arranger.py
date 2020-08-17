@@ -1,4 +1,5 @@
 import re # regular expressions
+import string
 def arithmetic_arranger(problems, true_or_false = False):
     arranged_problems = [[], [], [], []]
     for problem in problems:
@@ -7,9 +8,9 @@ def arithmetic_arranger(problems, true_or_false = False):
         # User error...
         if len(problems) > 5:
             return "Error: Too many problems."
-        elif "*" in problems or "/" in problems:
+        elif "*" in problem or "/" in problem:
             return "Error: Operator must be '+' or '-'."
-        elif "." in problems:
+        elif any(character.isalpha() for character in problem) == True:
             return "Error: Numbers must only contain digits."
         elif len(number_1) > 4 or len(number_2) > 4:
             return "Error: Numbers cannot be more than four digits."
@@ -35,10 +36,7 @@ def arithmetic_arranger(problems, true_or_false = False):
                 if "+" in problem:
                     arranged_problems[3].append(str(int(number_1) + int(number_2)))
                 elif "-" in problem:
-                    if int(number_1) - int(number_2) > 0:
-                        arranged_problems[3].append(str(int(number_1) - int(number_2)))
-                    elif int(number_1) - int(number_2) < 0:
-                        arranged_problems[3].append("-" + str(int(number_1) - int(number_2)))
+                    arranged_problems[3].append(str(int(number_1) - int(number_2)))
     line_one = arranged_problems[0]
     line_two = arranged_problems[1]
     line_three = arranged_problems[2]
@@ -64,15 +62,9 @@ def arithmetic_arranger(problems, true_or_false = False):
             else:
                 print("-" + line_two[i].rjust(problem_width[i] - 1))
     print("    ".join(line_three))
-    for i in range(len(problems)):
-        if "-" in problem and number_2 > number_1:
-            if line_four[i] != line_four[-1]:
-                print("-" + line_four[i].rjust(problem_width[i] - 1), end = "    ")
-            else:
-                print("-" + line_four[i].rjust(problem_width[i] - 1))
-        else:
+    if true_or_false == True:
+        for i in range(len(problems)):
             if line_four[i] != line_four[-1]:
                 print(line_four[i].rjust(problem_width[i]), end = "    ")
             else:
                 print(line_four[i].rjust(problem_width[i]))
-arithmetic_arranger(["32 - 698", "3801 - 2", "45 + 43", "123 + 49"], True)
