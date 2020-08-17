@@ -27,8 +27,6 @@ def arithmetic_arranger(problems, true_or_false = False):
                 arranged_problems[2].append("----")
             elif (max(len(number_1), len(number_2))) == 3:
                 arranged_problems[2].append("-----")
-            elif (len(number_1) == 4 and len(number_2) == 4) and (int(number_1) - int(number_2) < 0):
-                arranged_problems[2].append("-------")
             elif (max(len(number_1), len(number_2))) == 4:
                 arranged_problems[2].append("------")
             # Line 4
