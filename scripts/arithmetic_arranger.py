@@ -74,5 +74,3 @@ def arithmetic_arranger(problems, with_results = False):
                 print(line_four[i].rjust(problem_width[i]), end = separator)
             else:
                 print(line_four[i].rjust(problem_width[i]), end = "\n")
-
-arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"])
