@@ -42,7 +42,7 @@ def arithmetic_arranger(problems, true_or_false = False):
     problem_width = []
     for element in line_three:
         problem_width.append(len(element))
-    # Output formatting...
+    # Output formatting with \n...
     for i in range(len(problems)):
         if line_one[i] != line_one[-1]:
             print(line_one[i].rjust(problem_width[i]), end = "    ")
