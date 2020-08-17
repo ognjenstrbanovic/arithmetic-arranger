@@ -1,16 +1,16 @@
 import re # regular expressions
-import string
 def arithmetic_arranger(problems, true_or_false = False):
     arranged_problems = [[], [], [], []]
     for problem in problems:
-        number_1 = re.split("\+|\-", problem)[0].strip()
-        number_2 = re.split("\+|\-", problem)[1].strip()
+        if "+" in problem or "-" in problem:
+            number_1 = re.split("\+|\-", problem)[0].strip()
+            number_2 = re.split("\+|\-", problem)[1].strip()
         # User error...
         if len(problems) > 5:
             return "Error: Too many problems."
         elif "*" in problem or "/" in problem:
             return "Error: Operator must be '+' or '-'."
-        elif any(character.isalpha() for character in problem) == True:
+        elif re.search("[a-zA-Z]", problem) != None or "." in problem:
             return "Error: Numbers must only contain digits."
         elif len(number_1) > 4 or len(number_2) > 4:
             return "Error: Numbers cannot be more than four digits."
@@ -68,3 +68,4 @@ def arithmetic_arranger(problems, true_or_false = False):
                 print(line_four[i].rjust(problem_width[i]), end = "    ")
             else:
                 print(line_four[i].rjust(problem_width[i]))
+arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])
