@@ -42,29 +42,28 @@ def arithmetic_arranger(problems, true_or_false = False):
     problem_width = []
     for element in line_three:
         problem_width.append(len(element))
-    # Output formatting with \n...
+    # Output formatting with \n character...
     for i in range(len(problems)):
         if line_one[i] != line_one[-1]:
             print(line_one[i].rjust(problem_width[i]), end = "    ")
         else:
-            print(line_one[i].rjust(problem_width[i]))
+            print(line_one[i].rjust(problem_width[i]), end = "\n")
     for i in range(len(problems)):
         if "+" in problems[i]:
             if line_two[i] != line_two[-1]:
                 print("+" + line_two[i].rjust(problem_width[i] - 1), end = "    ")
             else:
-                print("+" + line_two[i].rjust(problem_width[i] - 1))
+                print("+" + line_two[i].rjust(problem_width[i] - 1), end = "\n")
         elif "-" in problems[i]:
             if line_two[i] != line_two[-1]:
                 print("-" + line_two[i].rjust(problem_width[i] - 1), end = "    ")
             else:
-                print("-" + line_two[i].rjust(problem_width[i] - 1))
-    print("    ".join(line_three))
+                print("-" + line_two[i].rjust(problem_width[i] - 1), end = "\n")
+    separator = " " * 4
+    print(separator.join(line_three), end = "\n")
     if true_or_false == True:
         for i in range(len(problems)):
             if line_four[i] != line_four[-1]:
                 print(line_four[i].rjust(problem_width[i]), end = "    ")
             else:
-                print(line_four[i].rjust(problem_width[i]))
-arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])
-arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49"], True)
+                print(line_four[i].rjust(problem_width[i]), end = "\n")
