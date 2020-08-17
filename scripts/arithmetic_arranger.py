@@ -27,7 +27,7 @@ def arithmetic_arranger(problems, true_or_false = False):
                 arranged_problems[2].append("----")
             elif (max(len(number_1), len(number_2))) == 3:
                 arranged_problems[2].append("-----")
-            elif (max(len(number_1), len(number_2))) == 4 and (int(number_1) - int(number_2) < 0):
+            elif (len(number_1) == 4 and len(number_2) == 4) and (int(number_1) - int(number_2) < 0):
                 arranged_problems[2].append("-------")
             elif (max(len(number_1), len(number_2))) == 4:
                 arranged_problems[2].append("------")
@@ -51,12 +51,12 @@ def arithmetic_arranger(problems, true_or_false = False):
         else:
             print(line_one[i].rjust(problem_width[i]))
     for i in range(len(problems)):
-        if "+" in problem:
+        if "+" in problems[i]:
             if line_two[i] != line_two[-1]:
                 print("+" + line_two[i].rjust(problem_width[i] - 1), end = "    ")
             else:
                 print("+" + line_two[i].rjust(problem_width[i] - 1))
-        if "-" in problem:
+        elif "-" in problems[i]:
             if line_two[i] != line_two[-1]:
                 print("-" + line_two[i].rjust(problem_width[i] - 1), end = "    ")
             else:
@@ -69,3 +69,4 @@ def arithmetic_arranger(problems, true_or_false = False):
             else:
                 print(line_four[i].rjust(problem_width[i]))
 arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"])
+arithmetic_arranger(["32 - 698", "1 - 3801", "45 + 43", "123 + 49"], True)
