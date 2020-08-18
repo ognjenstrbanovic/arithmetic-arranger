@@ -69,4 +69,6 @@ The unit tests for this project are in `test_module.py`. We imported the tests f
 
 Copy your project's URL and submit it to freeCodeCamp.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## I currently have two out of six unit tests failing; it's possible that there's a bug in the test itself... will keep pushing to make this pass 6/6.
