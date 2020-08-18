@@ -69,8 +69,10 @@ def arithmetic_arranger(problems, with_results = False):
                 print("-" + line_two[i].rjust(problem_width[i] - 1), end = separator)
             else:
                 print("-" + line_two[i].rjust(problem_width[i] - 1), end = "\n")
-
-    print(separator.join(line_three), end = "\n")
+    if with_results == True:
+        print(separator.join(line_three), end = "\n")
+    else:
+        print(separator.join(line_three))
 
     if with_results == True:
         for i in range(len(problems)):
