@@ -1,5 +1,5 @@
 import re # regular expressions
-def arithmetic_arranger(problems, with_results = False):
+def arithmetic_arranger(problems, results = False):
     
     if len(problems) > 5:
         return "Error: Too many problems."
@@ -34,49 +34,85 @@ def arithmetic_arranger(problems, with_results = False):
         elif (max(len(number_1), len(number_2))) == 4:
             arranged_problems[2].append("------")
         # Line 4
-        if with_results == True:
+        if results == True:
             if "+" in problem:
                 arranged_problems[3].append(str(int(number_1) + int(number_2)))
             elif "-" in problem:
                 arranged_problems[3].append(str(int(number_1) - int(number_2)))
 
-    line_one = arranged_problems[0]
-    line_two = arranged_problems[1]
-    line_three = arranged_problems[2]
-    line_four = arranged_problems[3]
+    line_one = []
+    line_two = []
+    line_three = []
+    line_four = []
 
     problem_width = []
     for element in line_three:
         problem_width.append(len(element))
 
-    # Output formatting with \n character...
-    separator = "    "
+    # Output formatting with tab and \n character...
+    separator = "\t"
 
     for i in range(len(problems)):
-        if line_one[i] != line_one[-1]:
-            print(line_one[i].rjust(problem_width[i]), end = separator)
+        if arranged_problems[0][i] != arranged_problems[0][-1]:
+            line_one.append(arranged_problems[0][i].rjust(problem_width[i]) + separator)
         else:
-            print(line_one[i].rjust(problem_width[i]), end = "\n")
+            line_one.append(arranged_problems[0][i].rjust(problem_width[i] + "\n"))
 
     for i in range(len(problems)):
-        if "+" in problems[i]:
-            if line_two[i] != line_two[-1]:
-                print("+" + line_two[i].rjust(problem_width[i] - 1), end = separator)
+        if "+" in problem:
+            if arranged_problems[1][i] != arranged_problems[1][-1]:
+                line_two.append("+" + arranged_problems[1][i].rjust(problem_width[i] - 1) + separator)
             else:
-                print("+" + line_two[i].rjust(problem_width[i] - 1), end = "\n")
-        elif "-" in problems[i]:
-            if line_two[i] != line_two[-1]:
-                print("-" + line_two[i].rjust(problem_width[i] - 1), end = separator)
+                line_two.append("+" + arranged_problems[1][i].rjust(problem_width[i] - 1) + "\n")
+        elif "-" in problem:
+            if arranged_problems[1][i] != arranged_problems[1][-1]:
+                line_two.append("-" + arranged_problems[1][i].rjust(problem_width[i] - 1) + separator)
             else:
-                print("-" + line_two[i].rjust(problem_width[i] - 1), end = "\n")
-    if with_results == True:
-        print(separator.join(line_three), end = "\n")
-    else:
-        print(separator.join(line_three))
+                line_two.append("-" + arranged_problems[1][i].rjust(problem_width[i] - 1) + "\n")
 
-    if with_results == True:
+    if results == True:
+        line_three.append(separator.join(arranged_problems[2]) + "\n")
+    else:
+        line_three.append(separator.join(arranged_problems[2]))
+
+    if results == True:
         for i in range(len(problems)):
-            if line_four[i] != line_four[-1]:
-                print(line_four[i].rjust(problem_width[i]), end = separator)
+            if arranged_problems[3][i] != arranged_problems[3][-1]:
+                line_four.append(arranged_problems[3][i].rjust(problem_width[i]) + separator)
             else:
-                print(line_four[i].rjust(problem_width[i]), end = "\n")
+                if problem[i] != problem[-1]:
+                    line_four.append(arranged_problems[3][i].rjust(problem_width[i]) + "\n")
+                else:
+                    line_four.append(arranged_problems[3][i].rjust(problem_width[i]))
+    
+    return line_one + line_two + line_three + line_four
+arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"], True)
+
+    # for i in range(len(problems)):
+    #     if arranged_problems[0][i] != arranged_problems[0][-1]:
+    #         line_one.append(arranged_problems[0][i].rjust(problem_width[i])
+    #     elif arranged_problems[0][i] == arranged_problems[0][-1]:
+    #         line_one.append(arranged_problems[0][i].rjust(problem_width[i]))
+
+    # for i in range(len(problems)):
+    #     if "+" in problems[i]:
+    #         if line_two[i] != line_two[-1]:
+    #             print("+" + line_two[i].rjust(problem_width[i] - 1), end = separator)
+    #         else:
+    #             print("+" + line_two[i].rjust(problem_width[i] - 1), end = "\n")
+    #     elif "-" in problems[i]:
+    #         if line_two[i] != line_two[-1]:
+    #             print("-" + line_two[i].rjust(problem_width[i] - 1), end = separator)
+    #         else:
+    #             print("-" + line_two[i].rjust(problem_width[i] - 1), end = "\n")
+    # if with_results == True:
+    #     print(separator.join(line_three), end = "\n")
+    # else:
+    #     print(separator.join(line_three))
+
+    # if with_results == True:
+    #     for i in range(len(problems)):
+    #         if line_four[i] != line_four[-1]:
+    #             print(line_four[i].rjust(problem_width[i]), end = separator)
+    #         else:
+    #             print(line_four[i].rjust(problem_width[i]), end = "\n")
