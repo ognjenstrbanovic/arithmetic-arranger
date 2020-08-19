@@ -52,11 +52,13 @@ def arithmetic_arranger(problems, results = False):
     # Output formatting with tab and \n character...
     separator = "    "
 
-    for i in range(len(problems)):
-        if arranged_problems[0][i] != arranged_problems[0][-1]:
+    for counter, i in enumerate(range(len(problems))):
+        if counter != len(problems) - 1:
             line_one.append(arranged_problems[0][i].rjust(problem_width[i]) + separator)
         else:
             line_one.append(arranged_problems[0][i].rjust(problem_width[i]) + "\n")
+
+    print(line_one)
 
     for i in range(len(problems)):
         if "+" in problems[i]:
@@ -92,6 +94,3 @@ def arithmetic_arranger(problems, results = False):
     arranged_strings = string_1 + string_2 + string_3 + string_4
 
     return arranged_strings
-
-print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"]))
-print("    3      3801      45      123\n+ 855    -    2    + 43    +  49\n-----    ------    ----    -----")
