@@ -1,4 +1,5 @@
-# fcc-arithmetic-arranger
+# arithmetic-arranger
+![Homer-Simpson-Math](https://github.com/ognjenstrbanovic/arithmetic-arranger/blob/master/Homer-Simpson-Math.jpg?raw=true)
 ### Assignment
 
 Students in primary school often arrange arithmetic problems vertically to make them easier to solve. For example, "235 + 52" becomes:
